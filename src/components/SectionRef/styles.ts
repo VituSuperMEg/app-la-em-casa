@@ -3,11 +3,14 @@ import theme from "../../styles/theme";
 
 export const RefContainer = styled.TouchableOpacity`
   background: ${theme.colors.yellow};
-  width: 200px;
-  height: 150px;
+  width: 100%;
+  height: 90px;
   border-radius: 6px;
-  justify-content: center;
+  margin-bottom: 10px;
   padding: 20px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;
 export const End = styled.View`
   width: 100%;

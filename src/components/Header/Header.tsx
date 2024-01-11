@@ -4,10 +4,9 @@ import { Box, Btn, Title } from "../../styles/styles";
 
 export function Header() {
   const user = useUser((state) => state.user);
-
   return (
-    <Box align="start" padding={20}>
-      <Box row="row" justify="space-bewteen">
+    <Box align="start" justify="end">
+      <Box row="row" justify="space-bewteen" background="debug">
         <Box align="start">
           <Title padddinLeft={20}>Olá, {user.name}</Title>
           <Title>📍{user.location}</Title>

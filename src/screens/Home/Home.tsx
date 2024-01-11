@@ -1,3 +1,4 @@
+import { SafeAreaView } from "react-native";
 import { Anucios } from "../../components/Anuncios/Anuncios";
 import { Header } from "../../components/Header/Header";
 import { SectionRef } from "../../components/SectionRef/SectionRef";
@@ -6,10 +7,8 @@ import theme from "../../styles/theme";
 
 export function Home() {
   return (
-    <Box background="slate" align="start" justify="start">
-      <Box height={180}>
+    <Box background="slate">
       <Header />
-      </Box>
       <Anucios />
       <SectionRef />
     </Box>

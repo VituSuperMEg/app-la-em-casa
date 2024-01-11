@@ -56,6 +56,4 @@ export const Btn = styled.TouchableOpacity<IBtn>`
 export const Scroll = styled.ScrollView<IScroll>`
   width: 100%;
   margin-top: ${props => props.marginTop || 0}px;
-
-
 `;
