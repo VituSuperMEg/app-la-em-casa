@@ -24,6 +24,9 @@ interface IBtn {
   padding?: number;
   disabled?: number;
 }
+interface IScroll {
+  marginTop?: number;
+}
 export const Box = styled.View<IBox>`
   flex: 1;
   background-color: ${props => props.background ? theme.colors[props.background] : 'transparent'};
@@ -49,4 +52,10 @@ export const Btn = styled.TouchableOpacity<IBtn>`
   padding: ${props => props.padding || 15}px;
   opacity: ${props => props.disabled ? 0.5 : 1};
   background: ${props => props.background ? theme.colors[props.background] : 'transparent'};
+`;
+export const Scroll = styled.ScrollView<IScroll>`
+  width: 100%;
+  margin-top: ${props => props.marginTop || 0}px;
+
+
 `;
