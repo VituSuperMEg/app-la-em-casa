@@ -17,21 +17,23 @@ import { useCart } from "../../state/useCart";
 import { useState } from "react";
 
 interface Item {
-  id : number;
-  name : string;
-  price : number;
+  id: number;
+  name: string;
+  price: number;
 }
 export function Ref() {
-
   const addToCart = useCart((state) => state.addToCart);
-  const [item, setItem] = useState<Item[]>([]);
+  const [item, setItem] = useState<Item[]>([
+    {
+      id: 1,
+      name: "refeição simples",
+      price: 10,
+    },
+  ]);
 
   return (
     <Container>
-      <Header 
-       stack 
-       cart
-      />
+      <Header stack cart />
       <RefContent>
         <RefImage source={refeicao} />
         <RefTitle>
@@ -64,7 +66,12 @@ export function Ref() {
           </RefCardCompletion>
         </RefScroll>
         <RefCart>
-          <Button background="yellow" title="Adicionar ao Carrinho" height={55} onPress={() => addToCart(item)}/>
+          <Button
+            background="yellow"
+            title="Adicionar ao Carrinho"
+            height={55}
+            onPress={() => addToCart(item)}
+          />
         </RefCart>
       </RefContent>
     </Container>

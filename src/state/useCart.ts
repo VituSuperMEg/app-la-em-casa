@@ -14,6 +14,9 @@ export const useCart = create<CartStore>((set) => {
   return {
     cart : [],
     countCart : 0,
-    addToCart : (item) => set((state) => ({ cart : [...state.cart, item], countCart : state.cart.length})),
+    addToCart: (item) => set((state) => {
+      const updatedCart = [...state.cart, item];
+      return { cart: updatedCart, countCart: updatedCart.length };
+    }),
   }
 })
