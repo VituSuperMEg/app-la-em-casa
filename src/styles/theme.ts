@@ -6,6 +6,7 @@ export default {
     yellow: "#fbbf24",
     yellowLight : '#F7EFA3',
     debug: "#fa6000",
+    red : "#ef4444"
   },
   fonts: {
     400: "Sora_400Regular",

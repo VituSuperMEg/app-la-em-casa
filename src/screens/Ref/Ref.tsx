@@ -13,11 +13,25 @@ import {
   RefTitle,
 } from "./styles";
 import { Button } from "../../components/Button/Button";
+import { useCart } from "../../state/useCart";
+import { useState } from "react";
 
+interface Item {
+  id : number;
+  name : string;
+  price : number;
+}
 export function Ref() {
+
+  const addToCart = useCart((state) => state.addToCart);
+  const [item, setItem] = useState<Item[]>([]);
+
   return (
     <Container>
-      <Header stack />
+      <Header 
+       stack 
+       cart
+      />
       <RefContent>
         <RefImage source={refeicao} />
         <RefTitle>
@@ -50,7 +64,7 @@ export function Ref() {
           </RefCardCompletion>
         </RefScroll>
         <RefCart>
-          <Button background="yellow" title="Adicionar ao Carrinho" height={55}/>
+          <Button background="yellow" title="Adicionar ao Carrinho" height={55} onPress={() => addToCart(item)}/>
         </RefCart>
       </RefContent>
     </Container>
