@@ -6,15 +6,18 @@ import refeicao from "../../assets/images/refeicoes.png";
 import lanches from "../../assets/images/lanches.png";
 import bebidas from "../../assets/images/bebidas.png";
 import buffe from "../../assets/images/buffe.png";
-
+import { useNavigation } from "@react-navigation/native";
 
 export function FoodService() {
+  
+  const { navigate } = useNavigation();
+
   return (
     <FoodContainer>
       <View style={{ width: "100%", justifyContent: "flex-start" }}>
         <Title>🍳 Serviços</Title>
       </View>
-      <FoodContent>
+      <FoodContent onPress={() => navigate("refeicao")}>
         <View>
           <Title size={16}>Refeições</Title>
           <Title size={25}>

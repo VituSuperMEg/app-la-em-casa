@@ -5,6 +5,7 @@ import { Entypo as Icon } from "@expo/vector-icons";
 import theme from "../styles/theme";
 import { Menu } from "../screens/Menu/Menu";
 import { Checkout } from "../screens/Checkout/Checkout";
+import { Stack } from "./Stack";
 
 const T = createBottomTabNavigator();
 
