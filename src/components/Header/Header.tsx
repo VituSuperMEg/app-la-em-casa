@@ -11,7 +11,8 @@ interface IHedaer {
   cart?: boolean;
 }
 export function Header({ stack = false, cart }: IHedaer) {
-  const { goBack } = useNavigation();
+
+  const { goBack, navigate } = useNavigation();
 
   const user = useUser((state) => state.user);
   const count = useCart((state) => state.countCart);
@@ -36,7 +37,7 @@ export function Header({ stack = false, cart }: IHedaer) {
               <FA name="corner-up-left" size={30} />
             </TouchableOpacity>
           </View>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigate("Check")}>
             <Count>
               <Title color="slate" size={10}>
               {count}
