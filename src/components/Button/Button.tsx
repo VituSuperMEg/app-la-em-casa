@@ -8,16 +8,18 @@ interface IButton extends TouchableOpacityProps {
   title : string;
   color?: keyof typeof theme.colors;
   size? : number;
+  height? : number;
 }
 export function Button ({
   background,
   title,
   color,
   size,
+  height,
   ...rest
 }:IButton) {
   return (
-    <ButtonContainer background={background} {...rest}>
+    <ButtonContainer background={background} height={height} {...rest}>
       <Title color={color} size={size}>
         {title}
       </Title>
