@@ -4,6 +4,7 @@ export default {
     info : "#858585",
     dark: "#000000",
     yellow: "#fbbf24",
+    yellowLight : '#F7EFA3',
     debug: "#fa6000",
   },
   fonts: {

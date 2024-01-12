@@ -8,7 +8,7 @@ interface ITitle {
 }
 export const Container = styled.SafeAreaView`
   background: ${theme.colors.slate};
-  padding: 20px 10px;
+  padding: 20px 10px 0 10px;
   flex : 1;
 `;
 export const Title = styled.Text<ITitle>`
