@@ -1,16 +1,18 @@
-import { SafeAreaView } from "react-native";
-import { Anucios } from "../../components/Anuncios/Anuncios";
+import { SafeAreaView, Text } from "react-native";
+import { Container } from "../../styles/styles";
 import { Header } from "../../components/Header/Header";
-import { SectionRef } from "../../components/SectionRef/SectionRef";
-import { Box } from "../../styles/styles";
-import theme from "../../styles/theme";
+import { FoodService } from "../../components/FoodService/FoodService";
+import { Ads } from "../../components/Ads/Ads";
+import { TabComponent } from "../../components/TabComponent/TabComponent";
 
 export function Home() {
   return (
-    <Box background="slate">
+    <Container>
       <Header />
-      <Anucios />
-      <SectionRef />
-    </Box>
+      <Ads />
+      <FoodService />
+
+      <TabComponent />
+    </Container>
   )
 }
