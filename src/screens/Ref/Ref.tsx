@@ -15,22 +15,38 @@ import {
 import { Button } from "../../components/Button/Button";
 import { useCart } from "../../state/useCart";
 import { useState } from "react";
+import { RefSimple } from "../../mocks/mocks";
 
 interface Item {
   id: number;
   name: string;
   price: number;
+  complement : [];
 }
 export function Ref() {
+   
   const addToCart = useCart((state) => state.addToCart);
+
   const [item, setItem] = useState<Item[]>([
     {
       id: 1,
       name: "refeição simples",
       price: 10,
+      complement : []
     },
   ]);
-
+  
+  function addItemAndRef(item: Item) {
+    setItem((prevItems) => {
+      const updatedItems = [...prevItems];
+      updatedItems[0].complement.push(item);
+      return updatedItems;
+    });
+  }
+  function addItemCartRef() {
+    addToCart(item);
+  }
+  console.log(RefSimple);
   return (
     <Container>
       <Header stack cart />
@@ -48,29 +64,32 @@ export function Ref() {
           </Title>
         </RefTitle>
         <RefScroll>
-          <RefCardCompletion>
-            <RefCompletion>
-              <Title>Guarnições</Title>
-            </RefCompletion>
-            <RefCheckbox></RefCheckbox>
-            <RefCheckbox></RefCheckbox>
-          </RefCardCompletion>
-          <RefCardCompletion>
-            <RefCompletion>
-              <Title>Adicionais</Title>
-            </RefCompletion>
-            <RefCheckbox></RefCheckbox>
-            <RefCheckbox></RefCheckbox>
-            <RefCheckbox></RefCheckbox>
-            <RefCheckbox></RefCheckbox>
-          </RefCardCompletion>
+          {RefSimple.map(ref => (
+            ref.items.map(i => (
+              <RefCardCompletion key={i.id}>
+                <RefCompletion>
+                  <Title>{i.title}</Title>
+                </RefCompletion>
+                {i.items.map(item => (
+                  item.details.map(r => (
+                    <RefCheckbox>
+                      <Title>
+                        {r.name}
+                        {'\n'}
+                        R$ {r.price}
+                      </Title>
+                    </RefCheckbox>
+                  ))
+                ))}
+              </RefCardCompletion>
+            ))))}
         </RefScroll>
         <RefCart>
           <Button
             background="yellow"
             title="Adicionar ao Carrinho"
             height={55}
-            onPress={() => addToCart(item)}
+            onPress={() => addItemCartRef()}
           />
         </RefCart>
       </RefContent>
