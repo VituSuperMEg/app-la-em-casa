@@ -31,6 +31,8 @@ export const RefCheckbox = styled.TouchableOpacity`
   height: 50px;
   margin-top: 10px;
   border-radius: 6px;
+  justify-content: center;
+  padding-left: 10px;
 `;
 export const RefCart = styled.View`
   margin: 15px 0;
