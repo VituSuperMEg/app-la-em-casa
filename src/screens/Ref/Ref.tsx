@@ -1,7 +1,6 @@
-import { ScrollView, View } from "react-native";
-import { Header } from "../../components/Header/Header";
-import { Container, Title } from "../../styles/styles";
-import refeicao from "../../assets/images/refeicoes.png";
+import { Header } from '../../components/Header/Header'
+import { Container, Title } from '../../styles/styles'
+import refeicao from '../../assets/images/refeicoes.png'
 import {
   RefCardCompletion,
   RefCart,
@@ -10,43 +9,42 @@ import {
   RefContent,
   RefImage,
   RefScroll,
-  RefTitle,
-} from "./styles";
-import { Button } from "../../components/Button/Button";
-import { useCart } from "../../state/useCart";
-import { useState } from "react";
-import { RefSimple } from "../../mocks/mocks";
+  RefTitle
+} from './styles'
+import { Button } from '../../components/Button/Button'
+import { useCart } from '../../state/useCart'
+import { useState } from 'react'
+import { RefSimple } from '../../mocks/mocks'
 
 interface Item {
-  id: number;
-  name: string;
-  price: number;
-  complement : [];
+  id: number
+  name: string
+  price: number
+  complement: []
 }
-export function Ref() {
-   
-  const addToCart = useCart((state) => state.addToCart);
+export function Ref () {
+  const addToCart = useCart((state) => state.addToCart)
 
   const [item, setItem] = useState<Item[]>([
     {
       id: 1,
-      name: "refeição simples",
+      name: 'refeição simples',
       price: 10,
-      complement : []
-    },
-  ]);
-  
-  function addItemAndRef(item: Item) {
+      complement: []
+    }
+  ])
+
+  function addItemAndRef (item: Item) {
     setItem((prevItems) => {
-      const updatedItems = [...prevItems];
-      updatedItems[0].complement.push(item);
-      return updatedItems;
-    });
+      const updatedItems = [...prevItems]
+      updatedItems[0].complement.push(item)
+      return updatedItems
+    })
   }
-  function addItemCartRef() {
-    addToCart(item);
+  function addItemCartRef () {
+    addToCart(item)
   }
-  console.log(RefSimple);
+  console.log(RefSimple)
   return (
     <Container>
       <Header stack cart />
@@ -55,11 +53,11 @@ export function Ref() {
         <RefTitle>
           <Title>
             Escolha o tipo de carne.
-            {"\n"}
+            {'\n'}
             <Title size={12}>(com direito a dois tipos de carnes)</Title>
-            {"\n"}
-            Acompanha Guarnição, Salada, Feijão e Batata.
-            {"\n"}
+            {'\n'}
+            Acompanha Arroz ou Baião, Salada, Feijão e Batata.
+            {'\n'}
             <Title size={10}>Serve 1 pessoa</Title>
           </Title>
         </RefTitle>
@@ -72,7 +70,7 @@ export function Ref() {
                 </RefCompletion>
                 {i.items.map(item => (
                   item.details.map(r => (
-                    <RefCheckbox>
+                    <RefCheckbox onPress={() => { addItemAndRef(r) }}>
                       <Title>
                         {r.name}
                         {'\n'}
@@ -89,10 +87,10 @@ export function Ref() {
             background="yellow"
             title="Adicionar ao Carrinho"
             height={55}
-            onPress={() => addItemCartRef()}
+            onPress={() => { addItemCartRef() }}
           />
         </RefCart>
       </RefContent>
     </Container>
-  );
+  )
 }
