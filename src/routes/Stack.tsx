@@ -2,7 +2,6 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { Ref } from '../screens/Ref/Ref'
 import { Tab } from './Tab'
 import { Confirmation } from '../components/Confirmation/Confrimation'
-import { Order } from '../screens/Order/Order'
 
 const S = createStackNavigator()
 
