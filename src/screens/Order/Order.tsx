@@ -1,4 +1,4 @@
-import { Container, Title } from "../../styles/styles";
+import { Container, Title } from '../../styles/styles'
 
 export function Order () {
   return (

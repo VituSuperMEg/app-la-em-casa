@@ -1,12 +1,12 @@
-import { Title } from "../../styles/styles";
-import { AdsContainer, AdsImage, Scroll } from "./styles";
-import anuncio from '../../assets/images/anucios.png';
+import { Title } from '../../styles/styles'
+import { AdsContainer, AdsImage, Scroll } from './styles'
+import anuncio from '../../assets/images/anucios.png'
 
-export function Ads() {
+export function Ads () {
   return (
     <AdsContainer>
       <Title>🍔 Anúncios</Title>
-      <Scroll horizontal>
+      <Scroll horizontal showsHorizontalScrollIndicator={false}>
         <AdsImage source={anuncio}/>
         <AdsImage source={anuncio}/>
         <AdsImage source={anuncio}/>

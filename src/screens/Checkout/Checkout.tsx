@@ -12,12 +12,14 @@ import {
 } from './styles'
 import { Button } from '../../components/Button/Button'
 import { MaterialIcons as Icon } from '@expo/vector-icons'
+import { useNavigation } from '@react-navigation/native'
 
 export function Checkout () {
   const cart = useCart((state) => state.cart.flatMap((i) => i))
   const total = useCart((state) => state.totalPrice)
   const removeToComplementeCart = useCart((state) => state.removeToComplementeCart)
 
+  const { navigate } = useNavigation()
   function handleRemoveToComplementeCart (item: Item) {
     removeToComplementeCart(item)
   }
@@ -25,6 +27,9 @@ export function Checkout () {
     <CheckoutContainer>
       <HeaderCheckout>
         <Title>🛒 Meu carrinho</Title>
+        <View>
+          <Title>Total : R$ {total}</Title>
+        </View>
       </HeaderCheckout>
       <CheckoutPreview>
         {cart.map((c) => (
@@ -46,14 +51,7 @@ export function Checkout () {
         ))}
       </CheckoutPreview>
       <CheckoutFooter>
-        <View
-          style={{
-            alignItems: 'flex-end'
-          }}
-        >
-          <Title>Total : R$ {total}</Title>
-        </View>
-        <Button title="Confirmar Pedido" background="yellow" height={50} />
+        <Button title="Confirmar Pedido" background="yellow" height={50} onPress={() => { navigate('confirmation') }}/>
         <Button
           style={{
             marginTop: 10

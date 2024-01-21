@@ -1,19 +1,19 @@
-import { SafeAreaView, ScrollView, Text } from "react-native";
-import { Container } from "../../styles/styles";
-import { Header } from "../../components/Header/Header";
-import { FoodService } from "../../components/FoodService/FoodService";
-import { Ads } from "../../components/Ads/Ads";
-import { LastOrder } from "../../components/LastOrder/LastOrder";
+import { SafeAreaView, ScrollView, Text } from 'react-native'
+import { Container } from '../../styles/styles'
+import { Header } from '../../components/Header/Header'
+import { FoodService } from '../../components/FoodService/FoodService'
+import { Ads } from '../../components/Ads/Ads'
+import { LastOrder } from '../../components/LastOrder/LastOrder'
 
-export function Home() {
+export function Home () {
   return (
     <Container>
       <Header />
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
       <Ads />
         <FoodService />
         <LastOrder />
       </ScrollView>
     </Container>
-  );
+  )
 }
