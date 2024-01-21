@@ -14,7 +14,6 @@ export function Stack () {
       <S.Screen name="Home" component={Tab} />
       <S.Screen name="refeicao" component={Ref}/>
       <S.Screen name="confirmation" component={Confirmation} />
-      <S.Screen name="order" component={Order} />
     </S.Navigator>
   )
 }
