@@ -2,14 +2,21 @@ import { ScrollView } from 'react-native'
 import { Title } from '../../styles/styles'
 import { ListHeader, ListItem } from './styles'
 
-export function List () {
+interface ILIst {
+  onExibir : (exibir : string) => void
+}
+export function List ({
+  onExibir
+}:ILIst) {
+
+
   return (
     <ScrollView horizontal showsHorizontalScrollIndicator={false}>
       <ListHeader>
-        <ListItem>
+        <ListItem onPress={() => onExibir("guarnicoes")}>
           <Title>Guarnições</Title>
         </ListItem>
-        <ListItem>
+        <ListItem onPress={() => onExibir("espetinhos")}>
           <Title>Espetinhos</Title>
         </ListItem>
         <ListItem>

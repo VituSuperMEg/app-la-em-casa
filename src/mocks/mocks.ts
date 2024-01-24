@@ -51,3 +51,22 @@ export const RefSimple = [
     ]
   }
 ]
+export const Guarnicoes = [{
+  items : [
+    {
+      id :'b3d986b6-8dc2-4b13-99b3-934b7ae4ed4a',
+      title : "Arroz Branco",
+      price : 4
+    },
+    {
+      id : '32932fbd-049f-42c0-982a-087eaec2bc60',
+      title : "Baião Comun",
+      price : 4
+    },
+    {
+      id : '868d33e1-3c1a-4e9e-85d5-3107c8b89a12',
+      title : "Baião Mole",
+      price : 8
+    }
+  ]
+}]
